@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "dm-sans": ["'DM Sans'", "sans-serif"],
+        stardos: ["'Stardos Stencil'", "cursive"],
       },
     },
   },
