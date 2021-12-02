@@ -7,6 +7,9 @@ module.exports = {
         "dm-sans": ["'DM Sans'", "sans-serif"],
         stardos: ["'Stardos Stencil'", "cursive"],
       },
+      colors: {
+        blueDark: "#0E1229",
+      },
     },
   },
   variants: {
