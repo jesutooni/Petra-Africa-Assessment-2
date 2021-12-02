@@ -10,6 +10,10 @@ module.exports = {
       colors: {
         blueDark: "#0E1229",
       },
+      screens: {
+        xs: "475px",
+        mid: "875px",
+      },
     },
   },
   variants: {
