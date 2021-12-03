@@ -1,6 +1,6 @@
 <template>
   <div class="home mx-4">
-    <header class="max-w-6xl mx-auto">
+    <header class="max-w-6xl mx-auto pb-8">
       <nav class="flex justify-between items-center py-6 mid:py-0">
         <div class="flex items-center">
           <span
@@ -39,13 +39,23 @@
 
         <button
           @click="signIn"
-          class="text-white font-bold bg-blueDark w-28 py-2 rounded-md"
+          class="hidden sm:block text-white font-bold bg-blueDark w-28 py-2 rounded-md"
         >
           Sign In
         </button>
+        <div @click="toggleNav" class="sm:hidden">
+          <span class="iconify" data-icon="entypo:menu" data-width="45"></span>
+        </div>
       </nav>
+      <button
+        v-if="nav"
+        @click="signIn"
+        class="text-white sm:hidden font-bold bg-blueDark w-28 py-2 rounded-md"
+      >
+        Sign In
+      </button>
 
-      <hr />
+      <hr class="hidden sm:block" />
 
       <section class="font-dm-sans mt-24 md:flex flex-row-reverse">
         <div class="w-48 md:w-auto mx-auto md:mx-0">
@@ -71,9 +81,17 @@
 
 export default {
   name: "Home",
+  data() {
+    return {
+      nav: false,
+    };
+  },
   methods: {
     signIn() {
       this.$router.push("/dashboard");
+    },
+    toggleNav() {
+      this.nav = !this.nav;
     },
   },
 };
