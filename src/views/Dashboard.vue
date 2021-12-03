@@ -10,11 +10,12 @@
 
         <div>
           <div
-            v-for="activity in activities"
-            :key="activity"
-            class="border w-96 h-12 cursor-pointer rounded-md px-5 mb-5 flex items-center"
+            v-for="(activity, index) in activities"
+            :key="activity.category"
+            @click="goTo(index)"
+            class="border h-16 cursor-pointer rounded-md px-5 mb-5 flex items-center hover:text-white hover:bg-blueDark duration-300"
           >
-            <h1 class="text-2xl">{{ activity }}</h1>
+            <h1 class="text-2xl">{{ activity.category }}</h1>
           </div>
         </div>
       </div>
@@ -31,12 +32,17 @@ export default {
   data() {
     return {
       activities: [
-        "Add an employee",
-        "View all employees",
-        "Pay an employee",
-        "View previous payments",
+        { category: "Add an employee", route: "addemployee" },
+        { category: "View all employees", route: "employees" },
+        { category: "Pay an employee", route: "pay" },
+        { category: "View previous payments", route: "transactions" },
       ],
     };
+  },
+  methods: {
+    goTo(index) {
+      this.$router.push(`/${this.activities[index].route}`);
+    },
   },
 };
 </script>
