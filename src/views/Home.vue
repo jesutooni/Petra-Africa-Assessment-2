@@ -33,7 +33,7 @@
           <li
             class="pb-6 pt-8 hover:text-blueDark font-semibold border-b-4 border-transparent hover:border-blueDark duration-150 cursor-pointer"
           >
-            About
+            License
           </li>
         </ul>
 
