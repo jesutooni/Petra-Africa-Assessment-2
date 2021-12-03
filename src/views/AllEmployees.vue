@@ -10,13 +10,13 @@
           <div
             v-for="employee in allEmployees"
             :key="employee.id"
-            class="mb-2 bg-gray-500 rounded-md px-2 h-16 py-1 cursor-pointer"
+            class="mb-2 bg-gray-500 rounded-md px-2 h-16 py-1"
           >
             <div>
-              <h1 class="">
+              <h1 class="text-lg">
                 {{ employee.first_name + " " + employee.last_name }}
               </h1>
-              <p class="text-sm text-white italic">{{ employee.email }}</p>
+              <p class="text-sm text-gray-100 italic">{{ employee.email }}</p>
             </div>
           </div>
         </div>
